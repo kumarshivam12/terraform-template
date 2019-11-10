@@ -39,8 +39,8 @@ resource "azurerm_network_interface" "main" {
 }
 resource "azurerm_network_security_group" "test" {
   name                = "${var.prefix}-NSG"
-  location            = "${azurerm_resource_group.test.location}"
-  resource_group_name = "${azurerm_resource_group.test.name}"
+  location            = "${azurerm_resource_group.main.location}"
+  resource_group_name = "${azurerm_resource_group.main.name}"
 
   security_rule {
     name                       = "http"
